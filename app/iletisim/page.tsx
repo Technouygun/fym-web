@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import PageClient from "./PageClient";
+import IletisimPageClient from "./IletisimPageClient";
 
 export const metadata: Metadata = {
-  title: "Ana Sayfa",
+  title: "İletişim",
   description:
     "FYM Danışmanlık hizmetleri: iş güvenliği eğitimleri, danışmanlık, üçüncü göz uygulamaları ve sahaya özel profesyonel destek çözümleri.",
   alternates: {
@@ -10,6 +10,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
-  return <PageClient />;
+export default function IletisimPage() {
+  return <IletisimPageClient />;
 }

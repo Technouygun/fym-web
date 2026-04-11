@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import PageClient from "./PageClient";
+import HizmetlerPageClient from "./HizmetlerPageClient";
 
 export const metadata: Metadata = {
-  title: "Ana Sayfa",
+  title: "Hizmetler",
   description:
     "FYM Danışmanlık hizmetleri: iş güvenliği eğitimleri, danışmanlık, üçüncü göz uygulamaları ve sahaya özel profesyonel destek çözümleri.",
   alternates: {
-    canonical: "/iletisim",
+    canonical: "/hizmetler",
   },
 };
 
-export default function Page() {
-  return <PageClient />;
+export default function HizmetlerPage() {
+  return <HizmetlerPageClient />;
 }
