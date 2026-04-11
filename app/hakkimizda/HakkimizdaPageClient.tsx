@@ -1,12 +1,38 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ShieldCheck, GraduationCap, Briefcase, LifeBuoy, Eye, BadgeCheck, ArrowRight } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
+import {
+  ShieldCheck,
+  GraduationCap,
+  Briefcase,
+  LifeBuoy,
+  Eye,
+  BadgeCheck,
+  ArrowRight,
+} from "lucide-react";
 import Link from "next/link";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: (i = 0) => ({
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const fadeUpWithDelay: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  show: (i: number = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
@@ -47,17 +73,17 @@ const features = [
 
 export default function HizmetlerPageClient() {
   return (
-    <main className="bg-white text-slate-800 overflow-hidden">
+    <main className="overflow-hidden bg-white text-slate-800">
       {/* HERO */}
-      <section className="relative isolate min-h-[88vh] flex items-center bg-[radial-gradient(circle_at_top,rgba(14,165,233,0.14),transparent_35%),linear-gradient(135deg,#0f172a_0%,#111827_40%,#1e293b_100%)]">
+      <section className="relative isolate flex min-h-[88vh] items-center bg-[radial-gradient(circle_at_top,rgba(14,165,233,0.14),transparent_35%),linear-gradient(135deg,#0f172a_0%,#111827_40%,#1e293b_100%)]">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 h-40 w-40 rounded-full bg-cyan-400 blur-3xl" />
+          <div className="absolute left-10 top-20 h-40 w-40 rounded-full bg-cyan-400 blur-3xl" />
           <div className="absolute bottom-10 right-10 h-56 w-56 rounded-full bg-blue-500 blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-300 blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-300 blur-3xl" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:px-12 w-full">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 lg:px-12">
+          <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
               <motion.div
                 variants={fadeUp}
@@ -71,7 +97,7 @@ export default function HizmetlerPageClient() {
 
               <motion.h1
                 custom={1}
-                variants={fadeUp}
+                variants={fadeUpWithDelay}
                 initial="hidden"
                 animate="show"
                 className="mt-6 text-4xl font-black leading-tight text-white md:text-6xl"
@@ -84,7 +110,7 @@ export default function HizmetlerPageClient() {
 
               <motion.p
                 custom={2}
-                variants={fadeUp}
+                variants={fadeUpWithDelay}
                 initial="hidden"
                 animate="show"
                 className="mt-6 max-w-2xl text-lg leading-8 text-slate-300"
@@ -96,7 +122,7 @@ export default function HizmetlerPageClient() {
 
               <motion.div
                 custom={3}
-                variants={fadeUp}
+                variants={fadeUpWithDelay}
                 initial="hidden"
                 animate="show"
                 className="mt-8 flex flex-wrap gap-4"
@@ -120,7 +146,7 @@ export default function HizmetlerPageClient() {
 
             <motion.div
               custom={4}
-              variants={fadeUp}
+              variants={fadeUpWithDelay}
               initial="hidden"
               animate="show"
               className="relative"
@@ -134,16 +160,18 @@ export default function HizmetlerPageClient() {
                       </div>
                       <div>
                         <p className="text-sm text-slate-500">Yaklaşımımız</p>
-                        <h3 className="text-xl font-bold">Sadece tespit değil, uygulanabilir çözüm</h3>
+                        <h3 className="text-xl font-bold">
+                          Sadece tespit değil, uygulanabilir çözüm
+                        </h3>
                       </div>
                     </div>
-                    <p className="mt-4 text-slate-600 leading-7">
+                    <p className="mt-4 leading-7 text-slate-600">
                       Riskleri yalnızca belirlemekle kalmıyor, işletmeler için sahada
                       karşılığı olan uygulanabilir öneriler sunuyoruz.
                     </p>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid gap-4 sm:grid-cols-2">
                     <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-5 text-white">
                       <h4 className="text-lg font-semibold">Tarafsız Bakış</h4>
                       <p className="mt-2 text-sm leading-6 text-slate-300">
@@ -168,10 +196,10 @@ export default function HizmetlerPageClient() {
       {/* HAKKIMIZDA */}
       <section className="relative py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <div className="grid gap-14 lg:grid-cols-[1.2fr_0.8fr] items-start">
+          <div className="grid items-start gap-14 lg:grid-cols-[1.2fr_0.8fr]">
             <motion.div
               custom={0}
-              variants={fadeUp}
+              variants={fadeUpWithDelay}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
@@ -179,7 +207,7 @@ export default function HizmetlerPageClient() {
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-600">
                 Hakkımızda
               </p>
-              <h2 className="mt-4 text-3xl md:text-5xl font-black text-slate-900 leading-tight">
+              <h2 className="mt-4 text-3xl font-black leading-tight text-slate-900 md:text-5xl">
                 İşletmeler için güvenliği,
                 <span className="text-cyan-600"> çalışanlar için farkındalığı </span>
                 güçlendiriyoruz
@@ -206,7 +234,7 @@ export default function HizmetlerPageClient() {
 
             <motion.div
               custom={1}
-              variants={fadeUp}
+              variants={fadeUpWithDelay}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
@@ -222,7 +250,7 @@ export default function HizmetlerPageClient() {
                     <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-100">
                       <BadgeCheck className="h-4 w-4 text-cyan-700" />
                     </div>
-                    <p className="text-slate-600 leading-7">{item}</p>
+                    <p className="leading-7 text-slate-600">{item}</p>
                   </div>
                 ))}
               </div>
@@ -232,11 +260,11 @@ export default function HizmetlerPageClient() {
       </section>
 
       {/* HİZMETLER */}
-      <section className="py-24 bg-slate-50">
+      <section className="bg-slate-50 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <motion.div
             custom={0}
-            variants={fadeUp}
+            variants={fadeUpWithDelay}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
@@ -245,7 +273,7 @@ export default function HizmetlerPageClient() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-600">
               Hizmetlerimiz
             </p>
-            <h2 className="mt-4 text-3xl md:text-5xl font-black text-slate-900">
+            <h2 className="mt-4 text-3xl font-black text-slate-900 md:text-5xl">
               İşletmenize değer katan profesyonel çözümler
             </h2>
           </motion.div>
@@ -258,7 +286,7 @@ export default function HizmetlerPageClient() {
                 <motion.div
                   key={service.title}
                   custom={index + 1}
-                  variants={fadeUp}
+                  variants={fadeUpWithDelay}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, amount: 0.2 }}
@@ -289,17 +317,17 @@ export default function HizmetlerPageClient() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="relative overflow-hidden rounded-[36px] bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 p-8 md:p-12 text-white shadow-[0_30px_100px_rgba(8,15,30,0.35)]"
+            className="relative overflow-hidden rounded-[36px] bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 p-8 text-white shadow-[0_30px_100px_rgba(8,15,30,0.35)] md:p-12"
           >
             <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan-400/20 blur-3xl" />
             <div className="absolute -left-10 bottom-0 h-48 w-48 rounded-full bg-blue-500/20 blur-3xl" />
 
-            <div className="relative z-10 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-center">
+            <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
               <div>
                 <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md">
                   <Eye className="h-8 w-8 text-cyan-300" />
                 </div>
-                <h2 className="mt-6 text-3xl md:text-5xl font-black leading-tight">
+                <h2 className="mt-6 text-3xl font-black leading-tight md:text-5xl">
                   3. Göz Uygulaması
                 </h2>
                 <p className="mt-5 text-lg leading-8 text-slate-300">
@@ -311,7 +339,7 @@ export default function HizmetlerPageClient() {
               <div className="grid gap-4">
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                   <h3 className="text-xl font-semibold">Tarafsız Yeterlilik Raporu</h3>
-                  <p className="mt-2 text-slate-300 leading-7">
+                  <p className="mt-2 leading-7 text-slate-300">
                     Mevcut iş güvenliği hizmetinizin yeterliliğini objektif şekilde analiz eder,
                     güçlü ve gelişime açık yönleri raporlarız.
                   </p>
@@ -319,7 +347,7 @@ export default function HizmetlerPageClient() {
 
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                   <h3 className="text-xl font-semibold">Bağımsız Risk Değerlendirmesi</h3>
-                  <p className="mt-2 text-slate-300 leading-7">
+                  <p className="mt-2 leading-7 text-slate-300">
                     İşletmenizin iş sağlığı ve güvenliği açısından mevcut durumunu
                     bağımsız risk değerlendirmesiyle ortaya koyarız.
                   </p>
@@ -327,7 +355,7 @@ export default function HizmetlerPageClient() {
 
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                   <h3 className="text-xl font-semibold">Net ve Uygulanabilir Sonuçlar</h3>
-                  <p className="mt-2 text-slate-300 leading-7">
+                  <p className="mt-2 leading-7 text-slate-300">
                     Sadece teorik tespitler değil, sahada uygulanabilecek net öneriler
                     sunarak dönüşüm sürecini hızlandırırız.
                   </p>
@@ -346,14 +374,14 @@ export default function HizmetlerPageClient() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="rounded-[32px] border border-slate-200 bg-gradient-to-r from-white to-slate-50 p-8 md:p-12 shadow-[0_20px_60px_rgba(15,23,42,0.06)]"
+            className="rounded-[32px] border border-slate-200 bg-gradient-to-r from-white to-slate-50 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] md:p-12"
           >
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-3xl">
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-600">
                   Birlikte Çalışalım
                 </p>
-                <h2 className="mt-3 text-3xl md:text-4xl font-black text-slate-900">
+                <h2 className="mt-3 text-3xl font-black text-slate-900 md:text-4xl">
                   İşletmenizin güvenlik süreçlerini daha güçlü hale getirelim
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-slate-600">
