@@ -97,7 +97,7 @@ const supportServices = [
     icon: Presentation,
   },
 
-  
+
   {
     title: "YANGIN VE ACİL DURUM EKİPMANLARI VE LEVHALARI KURULUM DANIŞMANLIĞI",
     description:
@@ -269,7 +269,7 @@ export default function HizmetlerPageClient() {
                 </div>
 
                 <div className="rounded-2xl border border-white/80 bg-white/90 px-5 py-4 shadow-sm">
-                  <div className="text-2xl font-bold text-slate-900">8+</div>
+                  <div className="text-2xl font-bold text-slate-900">10+</div>
                   <div className="text-sm text-slate-500">
                     Yapılandırılmış hizmet başlığı
                   </div>
