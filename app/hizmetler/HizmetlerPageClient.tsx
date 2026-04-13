@@ -13,7 +13,46 @@ import {
   LifeBuoy,
   AlertTriangle,
   PanelsTopLeft,
+  Book,
+  Bell,
+  Scale,
+  Shield,
+  Presentation,
 } from "lucide-react";
+
+
+const consultingServices = [
+  {
+    title: "ÜÇÜNCÜ GÖZ",
+    description:
+      "İşletmelerde mevcut sistemi dışarıdan, tarafsız ve profesyonel bir bakış açısıyla yürürlükteki mevzuatlara ve işletmenin ve çalışanlarının sağlık ve güvenliğine uygunluğunu değerlendiren.",
+    icon: Eye,
+  },
+  {
+    title: "İş İzinleri Eğitimi",
+    description:
+      "İşletmelerde iş izinlerinin kurulum ve takip süreçlerinin organizasyonu ve uygulamaları.",
+    icon: Book,
+  },
+  {
+    title: "Özel Gruplar ve Acil Durum Uygulamaları",
+    description:
+      "Özel politika gerektiren gebe, yaşlı, çocuk ve engelliler için acil durum planlamaları ve uygulamaları.",
+    icon: Bell,
+  },
+  {
+    title: "İş Hukuku Hizmetleri",
+    description:
+      "Adli Bilirkişi gözüyle işletmelerde işveren ve çalışanların iş hukuku açısından görev sorumluluk ve yükümlülüklerinin bilgilendirilmesi.",
+    icon: Scale,
+  },
+  {
+    title: "Öz Denetim",
+    description:
+      "İşyerlerinin kendi profesyonelleri ile yürürlükteki mevzuatlara uygun şekilde öz denetimlerini yapabilecekleri sistemlerin oluşturulması.",
+    icon: Shield,
+  },
+];
 
 const educationServices = [
   {
@@ -48,16 +87,17 @@ const educationServices = [
   },
 ];
 
-const consultingServices = [
-  {
-    title: "ÜÇÜNCÜ GÖZ",
-    description:
-      "İşletmelerde mevcut sistemi dışarıdan, tarafsız ve profesyonel bir bakış açısıyla değerlendiren özel danışmanlık yaklaşımı.",
-    icon: Eye,
-  },
-];
+
 
 const supportServices = [
+  {
+    title: "Tahliye Planı Hazırlama",
+    description:
+      "İşyerlerinde acil durumlar hakkında yönetmelik ve binaların yangından korunması hakkındaki yönetmelikler ışığında 23601 ve 7010 sayılı standartlara uygun yerinde tespit ile tahliye planı hazırlama.",
+    icon: Presentation,
+  },
+
+  
   {
     title: "YANGIN VE ACİL DURUM EKİPMANLARI VE LEVHALARI KURULUM DANIŞMANLIĞI",
     description:
@@ -70,7 +110,9 @@ const supportServices = [
       "Kurulum ve söküm süreçlerinde sahaya özel iş sağlığı ve güvenliği desteği, risk kontrolü ve operasyon takibi.",
     icon: PanelsTopLeft,
   },
+   
 ];
+
 
 const fadeUp: Variants = {
   hidden: {
@@ -253,6 +295,25 @@ export default function HizmetlerPageClient() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(56,189,248,0.16),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.12),transparent_28%)]" />
 
                 <div className="relative z-10 space-y-5">
+
+                      <div className="rounded-3xl border border-sky-100 bg-white/90 p-5 shadow-sm">
+                    <div className="flex items-center gap-4">
+                      <div className="rounded-2xl bg-cyan-50 p-3 text-cyan-700">
+                        <Eye size={26} />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-slate-900">
+                          Danışmanlık
+                        </h3>
+                        <p className="text-sm text-slate-500">
+                          Tarafsız değerlendirme ve profesyonel rehberlik
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+
+
                   <div className="rounded-3xl border border-sky-100 bg-white/90 p-5 shadow-sm">
                     <div className="flex items-center gap-4">
                       <div className="rounded-2xl bg-sky-50 p-3 text-sky-700">
@@ -269,22 +330,7 @@ export default function HizmetlerPageClient() {
                     </div>
                   </div>
 
-                  <div className="rounded-3xl border border-sky-100 bg-white/90 p-5 shadow-sm">
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-2xl bg-cyan-50 p-3 text-cyan-700">
-                        <Eye size={26} />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-slate-900">
-                          Danışmanlık
-                        </h3>
-                        <p className="text-sm text-slate-500">
-                          Tarafsız değerlendirme ve profesyonel rehberlik
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
+              
                   <div className="rounded-3xl border border-sky-100 bg-white/90 p-5 shadow-sm">
                     <div className="flex items-center gap-4">
                       <div className="rounded-2xl bg-blue-50 p-3 text-blue-700">
@@ -307,6 +353,24 @@ export default function HizmetlerPageClient() {
         </div>
       </section>
 
+
+  {/* Danışmanlık */}
+      <section className="relative py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+          <SectionHeader
+            badge="Danışmanlık"
+            title="Tarafsız ve stratejik bakış"
+            description="Mevcut işleyişi profesyonel bir perspektifle değerlendirerek gelişim alanlarını görünür hale getiren danışmanlık yaklaşımı."
+          />
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {consultingServices.map((item, index) => (
+              <ServiceCard key={item.title} item={item} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+      
       {/* Eğitimler */}
       <section className="relative py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
@@ -324,22 +388,7 @@ export default function HizmetlerPageClient() {
         </div>
       </section>
 
-      {/* Danışmanlık */}
-      <section className="relative py-20 md:py-24">
-        <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
-          <SectionHeader
-            badge="Danışmanlık"
-            title="Tarafsız ve stratejik bakış"
-            description="Mevcut işleyişi profesyonel bir perspektifle değerlendirerek gelişim alanlarını görünür hale getiren danışmanlık yaklaşımı."
-          />
-
-          <div className="mx-auto grid max-w-3xl gap-6">
-            {consultingServices.map((item, index) => (
-              <ServiceCard key={item.title} item={item} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* Destek */}
       <section className="relative py-20 md:py-24">
@@ -350,7 +399,7 @@ export default function HizmetlerPageClient() {
             description="Kurulum, yönlendirme, organizasyon ve operasyonel süreçlerde iş güvenliğini destekleyen uygulamaya dönük profesyonel çözümler."
           />
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {supportServices.map((item, index) => (
               <ServiceCard key={item.title} item={item} index={index} />
             ))}

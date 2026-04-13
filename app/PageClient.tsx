@@ -172,15 +172,15 @@ export default function PageClient() {
             <h1 className="text-4xl font-black leading-[1.05] md:text-6xl lg:text-7xl">
               İşletmeniz İçin
               <span className="mt-2 block text-[#6edfff] drop-shadow-[0_0_22px_rgba(39,193,230,0.65)]">
-                Güçlü, Güvenli,
+              Güvenli, Proaktif
               </span>
-              <span className="block">Sürdürülebilir Yapılar</span>
+              <span className="block">Sürdürülebilir İSG Yanaşımları</span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-gray-200 md:text-lg">
               Eğitim, saha desteği ve danışmanlık hizmetleriyle işletmenizde iş
-              güvenliği kültürünü güçlendiriyor; riskleri azaltan, uygulanabilir
-              ve profesyonel çözümler sunuyoruz.
+              güvenliği kültürünü güçlendiriyor; riskleri kaynağında tespit edip, 
+              uygulanabilir ve profesyonel çözümlerle güvenliği ortamın sürekliliğini sağlıyoruz.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -241,25 +241,25 @@ export default function PageClient() {
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
                     <p className="text-3xl font-extrabold text-white">
+                      <Counter end={500} suffix="+" />
+                    </p>
+                    <p className="mt-1 text-sm text-white/75">
+                      Tamamlanan Proje
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
+                    <p className="text-3xl font-extrabold text-white">
                       <Counter end={40} suffix="+" />
                     </p>
                     <p className="mt-1 text-sm text-white/75">
-                      Tamamlanan proje
+                      Şehirde Hizmet
                     </p>
                   </div>
 
                   <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
                     <p className="text-3xl font-extrabold text-white">
-                      <Counter end={25} suffix="+" />
-                    </p>
-                    <p className="mt-1 text-sm text-white/75">
-                      Memnun müşteri
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                    <p className="text-3xl font-extrabold text-white">
-                      <Counter end={10} suffix="+" />
+                      <Counter end={13} suffix="+" />
                     </p>
                     <p className="mt-1 text-sm text-white/75">
                       Yıl tecrübe
