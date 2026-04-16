@@ -419,7 +419,7 @@ Bağımsız denetim hizmeti</p>
 
                 <div>
                   <p className="text-2xl font-bold text-black">
-                    <Counter end={10.000} suffix="+" />
+                    <Counter end={10000} suffix="+" />
                   </p>
                   <p className="mt-1 text-sm font-semibold text-gray-800">
                     ÖĞRENCİ
