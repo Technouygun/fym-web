@@ -8,7 +8,7 @@ import { Menu, X, ArrowRight } from "lucide-react";
 
 const navItems = [
   { name: "Ana Sayfa", href: "/" },
-  { name: "Hakkımızda", href: "/hakkimizda" },
+  { name: "Hakkımızda", href: "/about" },
   { name: "Hizmetler", href: "/hizmetler" },
   { name: "Referanslar", href: "/#referanslar" },
 ];

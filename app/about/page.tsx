@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "FYM Danışmanlık hizmetleri: iş güvenliği eğitimleri, danışmanlık, üçüncü göz uygulamaları ve sahaya özel profesyonel destek çözümleri.",
   alternates: {
-    canonical: "/hakkimizda",
+    canonical: "/about",
   },
 };
 
