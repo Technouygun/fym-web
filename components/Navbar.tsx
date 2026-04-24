@@ -10,7 +10,9 @@ const navItems = [
   { name: "Ana Sayfa", href: "/" },
   { name: "Hakkımızda", href: "/about" },
   { name: "Hizmetler", href: "/hizmetler" },
+  { name: "İletişim", href: "/iletisim" },
   { name: "Referanslar", href: "/#referanslar" },
+
 ];
 
 export default function Navbar() {
@@ -130,10 +132,10 @@ export default function Navbar() {
 
             <div className="hidden items-center gap-3 md:flex">
               <Link
-                href="/iletisim"
+                href="/teklif-al"
                 className="group inline-flex items-center gap-2 rounded-full bg-[#27C1E6] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(39,193,230,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#18b6de]"
               >
-                Bize Ulaşın
+                Teklif Al
                 <ArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-0.5" />
               </Link>
             </div>
